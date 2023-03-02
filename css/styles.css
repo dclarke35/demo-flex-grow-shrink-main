@@ -1,0 +1,69 @@
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+section {
+    padding: 3rem;
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* :nth child selectors - selects elements based on their position as a child in any parent element*/
+
+section:first-child {
+    background-color: crimson;
+}
+
+section:last-child {
+    background-color: steelblue;
+}
+
+section:nth-child(2) {
+    background-color: tomato;
+}
+
+section:nth-child(3) {
+    background-color: khaki;
+}
+
+section:nth-last-child(3) {
+    background-color: lightgreen;
+}
+
+section:nth-last-child(2) {
+    background-color: lightseagreen;
+}
+
+/* The section inside the footer element is both the first child and last child of the parent element. It's also the only section on the page that is an only child. */
+section:only-child {
+    background-color: whitesmoke;
+    color: darkslategray;
+}
+
+/* Flexbox lays out content based on their width.
+    In this cas, the sections are as wide as the h2 heading inside of them. 
+    Due to their default width, 
+    these sections do not grow to fit the screen width when there is more room inside the flex container
+    
+    Flexbox can allow flex items to grow beyong their content width to take up all the room on the row.
+    
+    The default is flex-grow: 0; and flex-shrink: 1;*/
+section {
+     flex-grow: 0; /* means no grow */
+     flex-grow: 1; /* means grow */
+     flex-shrink: 1;
+     /* width: calc(100%/3);  do not use this with flex-grow/shrink */
+
+    /* The prefered width but allows it to grow and shrink to change that width.*/
+     flex-basis: 200px;
+
+     /*This is the shorthand for all 3. flex: grow shrink basis*/
+     flex: 1 1 250px;
+}
+
+section:nth-child(2) {
+   /*  flex-grow: 4; Creates a grow ratio - this section 2 gets 4 to the 1 that the rest of the sections get*/
+
+}
